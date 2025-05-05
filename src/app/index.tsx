@@ -1,11 +1,13 @@
-import { Text, View } from "react-native";
+import { StatusBar } from 'react-native'
+import { Main } from '../screens/main'
 
 const App = () => {
   return (
-    <View>
-      <Text>Hello, world</Text>
-    </View>
+    <>
+      <StatusBar barStyle={'dark-content'}/>
+      <Main></Main>
+    </>
   )
 }
 
-export default App;
+export default App
