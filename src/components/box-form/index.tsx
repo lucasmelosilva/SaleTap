@@ -1,6 +1,8 @@
 import { Text, View } from 'react-native'
 import { Input } from '../input'
 
+import { styles } from './styles'
+
 interface BoxFormProps {
   title: string
   placeholder: string
@@ -10,8 +12,8 @@ interface BoxFormProps {
 
 export const BoxForm = ({ title, func, placeholder, value}: BoxFormProps) => {
   return (
-    <View>
-      <Text>
+    <View style={styles.content}>
+      <Text style={styles.contentLabel}>
         {title}
       </Text>
       <Input func={func}
