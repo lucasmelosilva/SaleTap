@@ -1,8 +1,13 @@
-import { Text, View, Image, TextInput, TouchableOpacity, KeyboardAvoidingView, ScrollView, Platform, TouchableWithoutFeedback, Keyboard } from 'react-native'
+import { View, } from 'react-native'
 
 import { styles } from './styles'
 import { useState } from 'react'
-import { isAndroid } from '../../utils/isAndroid'
+import { MainContainer } from '../../components/main-container'
+import { Bundle } from '../../components/bundle'
+import { Input } from '../../components/input'
+import { InputPassword } from '../../components/input/password'
+import { Form } from '../../components/form'
+import { Button } from '../../components/button'
 
 export const Login = () => {
   const [employerId, setEmployerId] = useState('')
@@ -13,55 +18,22 @@ export const Login = () => {
   }
 
   const isDisable = (): boolean => {
-    return employerId.length === 0 && password.length === 0
+    return employerId.length === 0 || password.length === 0
   }
 
   return (
-    <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
-    <KeyboardAvoidingView
-    style={{flex: 1}}
-    behavior={isAndroid() ? 'height': 'padding'}
-    >
-      <ScrollView contentContainerStyle={{flexGrow: 1}}>
-        <View style={styles.container}>
-          <View style={styles.bundle}>
-            <Image
-              source={require('../../../assets/saletap.png')}
-              style={{ width: 250, height: 200 }}
-            />
-            <Text style={styles.title}>A vitrine do seu negócio na palma da mão.</Text>
-          </View>
+    <MainContainer>
+      <View style={styles.container}>
+        <Bundle />
+        <Form style={styles.formLogin}>
+          <Input func={setEmployerId} placeholder='matricula' value={employerId} />
 
-          <View style={styles.formLogin}>
+          <InputPassword func={setPassword} placeholder='Senha' value={password} />
 
-            <TextInput
-              style={styles.formInput}
-              placeholder="Matrícula"
-              value={employerId}
-              onChangeText={text => setEmployerId(text)}
-              editable={true}
-              keyboardType='default'
-            />
-            <TextInput
-              style={styles.formInput}
-              placeholder="Senha"
-              secureTextEntry
-              value={password}
-              onChangeText={text => setPassword(text)}
-            />
+          <Button disable={isDisable()} handle={handleSubmit} title='Entrar'/>
+        </Form>
 
-            <TouchableOpacity
-              style={styles.buttonForm}
-              onPress={handleSubmit}
-              disabled={isDisable()}
-            >
-              <Text style={styles.buttonText}>Entrar</Text>
-            </TouchableOpacity>
-
-          </View>
-        </View>
-      </ScrollView>
-    </KeyboardAvoidingView>
-    </TouchableWithoutFeedback>
+      </View>
+    </MainContainer>
   )
 }
