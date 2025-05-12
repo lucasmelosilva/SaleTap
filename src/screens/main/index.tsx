@@ -1,14 +1,12 @@
-import { SafeAreaView, StatusBar, Text, View } from 'react-native' 
+import { SafeAreaView } from 'react-native' 
 
 import { styles } from './styles' 
+import { Login } from '../login'
 
 export const Main = () => {
   return (
     <SafeAreaView style={styles.container}>
-      <View>
-        <Text>Hello, world</Text>
-      </View>
-      <StatusBar barStyle="dark-content" />
+      <Login/>
     </SafeAreaView>
   )
 }
