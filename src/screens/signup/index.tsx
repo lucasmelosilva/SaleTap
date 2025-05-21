@@ -3,7 +3,7 @@ import { Button } from '../../components/button'
 import { useState } from 'react'
 import { MainContainer } from '../../components/main-container'
 
-import { EmployerModel } from '../../models/employerModel'
+import { EmployerFormSchema } from '../../formSchemas/employerFormSchema'
 import { BoxForm } from '../../components/box-form'
 import Dropdown from 'react-native-input-select'
 
@@ -30,7 +30,7 @@ export const SignUp = () => {
 
         <Form style={styles.form}>
           {
-            Object.entries(EmployerModel).map(([objectName, objectValue], key) => {
+            Object.entries(EmployerFormSchema).map(([objectName, objectValue], key) => {
               return (
                 <BoxForm
                   key={key}

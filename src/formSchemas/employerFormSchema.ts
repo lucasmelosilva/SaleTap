@@ -1,4 +1,4 @@
-export const EmployerModel = {
+export const EmployerFormSchema = {
     name: {
       title: 'Nome do funcionário',
       placeholder: 'Maria do Barrio'
