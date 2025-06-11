@@ -1,5 +1,4 @@
 import { Keyboard, KeyboardAvoidingView, ScrollView, TouchableWithoutFeedback } from 'react-native'
-import { isAndroid } from '../../utils/isAndroid'
 import { ReactNode } from 'react'
 
 
@@ -12,9 +11,9 @@ export const MainContainer = ({ children }: MainContainerProps) => {
     <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
       <KeyboardAvoidingView
         style={{ flex: 1 }}
-        behavior={isAndroid() ? 'height' : 'padding'}
+        behavior='padding'
       >
-        <ScrollView contentContainerStyle={{ flexGrow: 1 }}>
+        <ScrollView contentContainerStyle={{ flexGrow: 1 }} keyboardShouldPersistTaps='handled'>
           {children}
         </ScrollView>
       </KeyboardAvoidingView>

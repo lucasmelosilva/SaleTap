@@ -13,7 +13,8 @@
       "backgroundColor": "#0E4B5B"
     },
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.anonymous.saleTap"
     },
     "android": {
       "adaptiveIcon": {
@@ -21,10 +22,24 @@
         "backgroundColor": "#0E4B5B"
       },
       "edgeToEdgeEnabled": true,
-      "package": "com.anonymous.saleTap"
+      "package": "com.anonymous.saleTap",
+      "permissions": [
+        "android.permission.CAMERA",
+        "android.permission.RECORD_AUDIO"
+      ]
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "plugins": [
+      [
+        "expo-camera",
+        {
+          "cameraPermission": "Allow $(PRODUCT_NAME) to access your camera",
+          "microphonePermission": "Allow $(PRODUCT_NAME) to access your microphone",
+          "recordAudioAndroid": true
+        }
+      ]
+    ]
   }
 }

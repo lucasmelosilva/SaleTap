@@ -3,7 +3,7 @@ export const ProductFormSchema = {
     title: 'Nome',
     placeholder: 'Calça Jeans'
   },
-  barcode: {
+  barCode: {
     title: 'Código de barra',
     placeholder: '1234567343'
   },
@@ -13,6 +13,6 @@ export const ProductFormSchema = {
   },
   price: {
     title: 'Preço',
-    placeholder: '70,00'
+    placeholder: '70.00'
   }
 }
