@@ -14,5 +14,9 @@ export const ProductFormSchema = {
   price: {
     title: 'Preço',
     placeholder: '70.00'
+  },
+  quantity: {
+    title: 'Quantidade',
+    placeholder: '10'
   }
 }

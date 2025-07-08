@@ -17,7 +17,8 @@ export const AddProduct = () => {
     name: '',
     barCode: '',
     image: null as any, // Use 'any' type for image to avoid type issues
-    price: ''
+    price: '',
+    quantity: ''
   })
 
   // Função para verificar se todos os campos estão vazios ou nulos
@@ -55,6 +56,7 @@ export const AddProduct = () => {
     formData.append('name', productFormSubmit.name);
     formData.append('barCode', productFormSubmit.barCode);
     formData.append('price', productFormSubmit.price);
+    formData.append('quantity', productFormSubmit.quantity);
 
     if (productFormSubmit.image) {
       const imageURI = productFormSubmit?.image.uri
